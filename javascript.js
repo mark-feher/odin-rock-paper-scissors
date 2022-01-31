@@ -1,12 +1,12 @@
 function computerPlay () {
     let rockPaperScissors = ["Rock", "Paper", "Scissors"];
 
-    return rockPaperScissors[Math.floor(Math.random() * rockPaperScissors.length)]
+    return rockPaperScissors[Math.floor(Math.random() * rockPaperScissors.length)].toLowerCase();
 }
 
 function playerPlay (playerSelection) {
     playerSelection = prompt();
-    return playerSelection;
+    return playerSelection.toLowerCase();
 }
 
 function playOneRound (playerSelection, computerSelection) {
@@ -14,19 +14,21 @@ function playOneRound (playerSelection, computerSelection) {
     + "Computer chose: " + computerSelection);
     if (playerSelection === computerSelection) {
         return "Tie!";
-    } else if (playerSelection === "Rock" && computerSelection === "Paper") {
+    } else if (playerSelection === "rock" && computerSelection === "paper") {
         return "Paper beats Rock, you lose!";
-    } else if (playerSelection === "Rock" && computerSelection === "Scissors") {
+    } else if (playerSelection === "rock" && computerSelection === "scissors") {
         return "Rock beats Scissors, you win!";
-    } else if (playerSelection === "Paper" && computerSelection === "Rock") {
+    } else if (playerSelection === "paper" && computerSelection === "rock") {
         return "Paper beats Rock, you win!";
-    } else if (playerSelection === "Paper" && computerSelection === "Scissors") {
+    } else if (playerSelection === "paper" && computerSelection === "scissors") {
         return "Scissors beat Rock, you lose!";
-    } else if (playerSelection === "Scissors" && computerSelection === "Rock") {
+    } else if (playerSelection === "scissors" && computerSelection === "rock") {
         return "Rock beats Scissors, you lose!";
-    } else if (playerSelection === "Scissors" && computerSelection === "Paper") {
+    } else if (playerSelection === "scissors" && computerSelection === "paper") {
         return "Scissors beat Paper, you win!";
     }
+
+    return "Invalid selection!"
 }
 
-// console.log(playOneRound(playerPlay(), computerPlay()));
+console.log(playOneRound(playerPlay(), computerPlay()));
