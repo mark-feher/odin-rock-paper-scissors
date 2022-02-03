@@ -1,7 +1,7 @@
 function computerPlay () {
     let rockPaperScissors = ["Rock", "Paper", "Scissors"];
     let chooseOne = rockPaperScissors[Math.floor(Math.random() * rockPaperScissors.length)]
-    console.log(chooseOne.toLowerCase());
+    console.log("DEBUG: Computer chose: " + chooseOne.toLowerCase());
     return chooseOne.toLowerCase();
 };
 
@@ -43,7 +43,9 @@ function game() {
     for (let gameRound = 0; gameRound < 5; gameRound++) {
         let oneRound = playOneRound(computerPlay(), playerPlay());
 
-        if (oneRound == 1) {
+        if (oneRound == 0) {
+            gameRound -= 1;
+        } else if (oneRound == 1) {
             computerScore += 1;
         } else if (oneRound == 2) {
             playerScore += 1;
