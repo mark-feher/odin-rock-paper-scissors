@@ -48,10 +48,13 @@ function game() {
         } else if (oneRound == 2) {
             playerScore += 1;
         }
+        console.log("Player score is: " + playerScore);
+        console.log("Computer score is: " + computerScore);
     }
 
-    console.log("Player score is: " + playerScore);
-    console.log("Computer score is: " + computerScore);
+    if (playerScore > computerScore) {
+        console.log("Player won the game! Congratulations!")
+    } else console.log("Computer won the game! Better luck next time!")
 }
 
 game();
